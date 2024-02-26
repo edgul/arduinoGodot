@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnhij4u84ghia"]
+[gd_scene load_steps=4 format=3 uid="uid://cnhij4u84ghia"]
 
 [ext_resource type="Script" path="res://serial_port_test.gd" id="1_c07n3"]
+[ext_resource type="Shader" path="res://serial_port_test.gdshader" id="2_prto6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovwmr"]
+shader = ExtResource("2_prto6")
 
 [node name="SerialPortTest" type="Control"]
 layout_mode = 3
@@ -12,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_c07n3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ovwmr")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

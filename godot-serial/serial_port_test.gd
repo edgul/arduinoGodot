@@ -76,6 +76,13 @@ func _on_data_received(data: PackedByteArray):
 	print("Received[%d]: %s" % [data.size(), data.get_string_from_ascii()])
 	if serial.is_open():
 		serial.write_raw(data)
+	
+	# use the value received to update the red channel of our shader color
+	var received_int = data.get_string_from_ascii().to_int()
+	var received_float = received_int / 1024.0
+	print("Converted to: %f" % [received_float])
+	var new_color = Color(received_float, 0, 0, 1)
+	RenderingServer.global_shader_parameter_set("color", new_color)
 
 
 func _on_send_pressed():

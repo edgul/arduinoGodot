@@ -34,7 +34,7 @@ void loop() {
   // send an update when the value has changed significantly
   int valPot = analogRead(A0);
   if (abs(valPot - lastValPot) > sensitivityFactor) {
-    Serial.println("New value pot: " + String(valPot));
+    Serial.println(String(valPot));
     lastValPot = valPot;
   }
 }

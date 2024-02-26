@@ -14,3 +14,10 @@ config/name="Test-Proj"
 run/main_scene="res://serial_port_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[shader_globals]
+
+color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
